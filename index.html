@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FindIt | Smart Campus Lost & Found</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+    <header>
+        <div class="logo">Find<span>It.</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#items">Browse Items</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="nav-btn" onclick="openForm('Found')">
+            Report Found
+        </button>
+    </header>
+
+    
+    <section class="hero" id="home">
+
+        <p class="tagline">SMART CAMPUS LOST & FOUND</p>
+
+        <h1>Lost something?<br>
+            <span>Let's Find It.</span>
+        </h1>
+
+        <p class="description">
+            A simple way to report lost belongings
+            and reconnect people with their items
+            within the campus.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="primary-btn"
+                onclick="openForm('Lost')">
+                Report Lost Item
+            </button>
+
+            <button class="secondary-btn"
+                onclick="openForm('Found')">
+                Report Found Item
+            </button>
+        </div>
+
+    </section>
+
+    
+    <section class="stats">
+
+        <div class="stat-box">
+            <h2 id="totalItems">0</h2>
+            <p>Total Reports</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="lostItems">0</h2>
+            <p>Lost Items</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="foundItems">0</h2>
+            <p>Found Items</p>
+        </div>
+
+    </section>
+
+    
+    <section class="items-section" id="items">
+
+        <h2>Explore Campus Reports</h2>
+
+        <p>Search for your missing belongings.</p>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search items..."
+        >
+
+        <div class="filter-buttons">
+            <button onclick="filterItems('All')">All</button>
+            <button onclick="filterItems('Lost')">Lost</button>
+            <button onclick="filterItems('Found')">Found</button>
+        </div>
+
+        <div id="itemList" class="item-list">
+            <!-- Items will appear here -->
+        </div>
+
+    </section>
+
+    
+    <div id="reportModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeForm()">
+                &times;
+            </span>
+
+            <h2 id="formTitle">Report Item</h2>
+
+            <form id="reportForm">
+
+                <label>Item Name</label>
+                <input type="text" id="itemName"
+                    placeholder="Example: Black Wallet" required>
+
+                <label>Category</label>
+                <select id="category" required>
+                    <option value="">Select category</option>
+                    <option>Electronics</option>
+                    <option>ID Cards</option>
+                    <option>Bags</option>
+                    <option>Books</option>
+                    <option>Accessories</option>
+                    <option>Others</option>
+                </select>
+
+                <label>Location</label>
+                <input type="text" id="location"
+                    placeholder="Where was it lost or found?" required>
+
+                <label>Description</label>
+                <textarea id="description"
+                    placeholder="Describe the item..." required></textarea>
+
+                <label>Contact Information</label>
+                <input type="text" id="contact"
+                    placeholder="Email or phone number" required>
+
+                <label>Private Verification Clue</label>
+                <input type="text" id="clue"
+                    placeholder="A detail only the real owner knows">
+
+                <button type="submit" class="primary-btn">
+                    Submit Report
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    
+    <section class="about" id="about">
+        <h2>About FindIt</h2>
+
+        <p>
+            FindIt is a campus-based lost and found platform
+            designed to help students report missing items
+            and recover their belongings easily.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 FindIt | Smart Campus Lost & Found</p>
+        <p>Built with ❤️ by Shwetha</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
